@@ -1,0 +1,26 @@
+{
+    "smartinvestplusApp": {
+        "titre" : {
+            "home": {
+                "title": "Titres",
+                "createLabel": "Créer un nouveau Titre",
+                "createOrEditLabel": "Créer ou éditer un Titre",
+                "search": "Recherche pour Titre"
+            },
+            "created": "Un nouveau Titre a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Titre avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Titre avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Titre {{ id }} ?"
+            },
+            "detail": {
+                "title": "Titre"
+            },
+            "nom": "Nom",
+            "symbole": "Symbole",
+            "bourse": "Bourse",
+            "cloture": "Cloture",
+            "fractionnement": "Fractionnement"
+        }
+    }
+}

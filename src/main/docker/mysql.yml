@@ -1,0 +1,14 @@
+version: '2'
+services:
+    smartinvestplus-mysql:
+        container_name: smartinvestplus-mysql
+        image: mysql:5.7.11
+        # volumes:
+        #     - ~/volumes/jhipster/smartinvestplus/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=smartinvestplus
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl

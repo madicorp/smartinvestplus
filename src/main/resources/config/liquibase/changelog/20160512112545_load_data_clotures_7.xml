@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Fractionnements.
+    -->
+    <changeSet id="20160512112545-9" author="jhipster">
+
+    <sqlFile dbms="MySQL"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"
+             endDelimiter="\"
+             encoding="utf8"
+             path="../csv/sogb_ci.sql"/>
+
+      <loadData encoding="UTF-8"
+                file="config/liquibase/csv/solibra_ci.csv"
+                separator=";"
+                tableName="cloture"/>
+
+       <loadData encoding="UTF-8"
+                file="config/liquibase/csv/sonatel_sn.csv"
+                separator=";"
+                tableName="cloture"/>
+
+       <loadData encoding="UTF-8"
+                file="config/liquibase/csv/total_ci.csv"
+                separator=";"
+                tableName="cloture"/>
+
+
+
+      <loadData encoding="UTF-8"
+                file="config/liquibase/csv/total_sn.csv"
+                separator=";"
+                tableName="cloture"/>
+
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "titre",
+            "otherEntityName": "titre",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "bourse"
+        },
+        {
+            "relationshipName": "indice",
+            "otherEntityName": "indice",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "bourse"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "symbole",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160512110955",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "bourse",
+    "pagination": "pager"
+}

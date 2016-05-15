@@ -1,0 +1,24 @@
+{
+    "smartinvestplusApp": {
+        "fractionnement" : {
+            "home": {
+                "title": "Fractionnements",
+                "createLabel": "Créer un nouveau Fractionnement",
+                "createOrEditLabel": "Créer ou éditer un Fractionnement",
+                "search": "Recherche pour Fractionnement"
+            },
+            "created": "Un nouveau Fractionnement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Fractionnement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Fractionnement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Fractionnement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Fractionnement"
+            },
+            "date": "Date",
+            "valeur": "Valeur",
+            "titre": "Titre"
+        }
+    }
+}

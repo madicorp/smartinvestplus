@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Fractionnements.
+    -->
+    <changeSet id="20160512112546" author="jhipster">
+
+        <sql dbms="MYSQL"
+                   endDelimiter="\nGO"
+                   splitStatements="true"
+                   stripComments="true">
+            -- Procedure ajout fractionnement
+            CREATE DEFINER=`root`@`localhost`
+            PROCEDURE `ajout_fraction` (IN `datefrac` DATE, IN `valfrac` INT, IN `titreid` INT)
+            NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER
+            BEGIN
+            DECLARE bDone INT;
+            DECLARE coursid INT; -- or approriate type
+            DECLARE coursval DOUBLE;
+            DECLARE curs CURSOR FOR
+            SELECT id, cours
+            FROM cloture
+            WHERE date &lt;= datefrac
+            AND titre_id = titreid;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET bDone = 1;
+            OPEN curs;
+            SET bDone = 0;
+            REPEAT FETCH curs INTO coursid,coursval; -- here for whatever_transformation_may_be_desired
+            UPDATE cloture SET cours = coursval/valfrac WHERE id = coursid;
+            UNTIL bDone END REPEAT;
+            CLOSE curs;
+            END
+        </sql>
+        <sql dbms="MYSQL"
+             endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+            -- Procedure delete fractionnement
+            CREATE DEFINER=`root`@`localhost`
+            PROCEDURE `supprimer_fraction` (IN `datefrac` DATE, IN `valfrac` INT, IN `titreid` INT)
+            NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER
+            BEGIN
+            DECLARE bDone INT;
+            DECLARE coursid INT; -- or approriate type
+            DECLARE coursval DOUBLE;
+            DECLARE curs CURSOR FOR
+            SELECT id, cours
+            FROM cloture
+            WHERE date &lt;= datefrac
+            AND titre_id = titreid;
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET bDone = 1;
+            OPEN curs;
+            SET bDone = 0;
+            REPEAT FETCH curs INTO coursid,coursval; -- here for whatever_transformation_may_be_desired
+            UPDATE cloture SET cours = coursval*valfrac WHERE id = coursid;
+            UNTIL bDone END REPEAT;
+            CLOSE curs;
+            END
+        </sql>
+    </changeSet>
+</databaseChangeLog>

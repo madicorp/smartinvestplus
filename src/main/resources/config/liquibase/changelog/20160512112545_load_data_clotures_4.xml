@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Fractionnements.
+    -->
+    <changeSet id="20160512112545-6" author="jhipster">
+
+      <loadData encoding="UTF-8"
+                file="config/liquibase/csv/nei_ceda_ci.csv"
+                separator=";"
+                tableName="cloture"/>
+
+      <loadData encoding="UTF-8"
+                file="config/liquibase/csv/nestle_ci.csv"
+                separator=";"
+                tableName="cloture"/>
+
+     <loadData encoding="UTF-8"
+                file="config/liquibase/csv/onatel_bf.csv"
+                separator=";"
+                tableName="cloture"/>
+
+      <loadData encoding="UTF-8"
+                file="config/liquibase/csv/palm_ci.csv"
+                separator=";"
+                tableName="cloture"/>
+    </changeSet>
+</databaseChangeLog>

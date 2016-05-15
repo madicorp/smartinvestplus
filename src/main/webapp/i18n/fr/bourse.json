@@ -1,0 +1,26 @@
+{
+    "smartinvestplusApp": {
+        "bourse" : {
+            "home": {
+                "title": "Bourses",
+                "createLabel": "Créer un nouveau Bourse",
+                "createOrEditLabel": "Créer ou éditer un Bourse",
+                "search": "Recherche pour Bourse"
+            },
+            "created": "Un nouveau Bourse a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Bourse avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Bourse avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Bourse {{ id }} ?"
+            },
+            "detail": {
+                "title": "Bourse"
+            },
+            "nom": "Nom",
+            "symbole": "Symbole",
+            "user": "User",
+            "titre": "Titre",
+            "indice": "Indice"
+        }
+    }
+}

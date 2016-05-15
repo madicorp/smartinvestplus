@@ -1,0 +1,25 @@
+{
+    "smartinvestplusApp": {
+        "indice" : {
+            "home": {
+                "title": "Indices",
+                "createLabel": "Create a new Indice",
+                "createOrEditLabel": "Create or edit a Indice",
+                "search": "Search for Indice"
+            },
+            "created": "A new Indice is created with identifier {{ param }}",
+            "updated": "A Indice is updated with identifier {{ param }}",
+            "deleted": "A Indice is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Indice {{ id }}?"
+            },
+            "detail": {
+                "title": "Indice"
+            },
+            "top": "Top",
+            "composite": "Composite",
+            "date": "Date",
+            "bourse": "Bourse"
+        }
+    }
+}

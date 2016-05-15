@@ -1,0 +1,27 @@
+{
+    "smartinvestplusApp": {
+        "cloture" : {
+            "home": {
+                "title": "Clotures",
+                "createLabel": "Créer un nouveau Cloture",
+                "createOrEditLabel": "Créer ou éditer un Cloture",
+                "search": "Recherche pour Cloture"
+            },
+            "created": "Un nouveau Cloture a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cloture avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cloture avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cloture {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cloture"
+            },
+            "date": "Date",
+            "volume": "Volume",
+            "valeur": "Valeur",
+            "transactions": "Transactions",
+            "cours": "Cours",
+            "titre": "Titre"
+        }
+    }
+}

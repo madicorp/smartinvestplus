@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Fractionnements.
+    -->
+    <changeSet id="20160512112547" author="jhipster">
+
+        <sql dbms="MYSQL"
+             endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+            -- trigger ajout fractionnement
+            CREATE TRIGGER `ajout_fraction` AFTER INSERT ON `fractionnement` FOR EACH ROW
+            BEGIN
+                CALL ajout_fraction(NEW.`date`,NEW.`valeur`,NEW.`titre_id`);
+            END;
+        </sql>
+        <sql dbms="MYSQL"
+             endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+            -- trigger update fractionnement
+            CREATE TRIGGER `update_fraction` AFTER UPDATE ON `fractionnement` FOR EACH ROW
+            BEGIN
+                CALL supprimer_fraction(OLD.`date`,OLD.`valeur`,OLD.`titre_id`);
+                CALL ajout_fraction(NEW.`date`,NEW.`valeur`,NEW.`titre_id`);
+            END;
+        </sql>
+        <sql dbms="MYSQL"
+             endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true">
+            -- trigger delete fractionnement
+            CREATE TRIGGER `supprimer_fraction` AFTER DELETE ON `fractionnement` FOR EACH ROW
+            BEGIN
+                CALL supprimer_fraction(OLD.`date`,OLD.`valeur`,OLD.`titre_id`);
+            END;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

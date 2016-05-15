@@ -1,0 +1,31 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "titre",
+            "otherEntityName": "titre",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "symbole"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valeur",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160512112543",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "fractionnement",
+    "pagination": "infinite-scroll"
+}

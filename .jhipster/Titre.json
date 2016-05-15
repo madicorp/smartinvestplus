@@ -1,0 +1,40 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "bourse",
+            "otherEntityName": "bourse",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nom"
+        },
+        {
+            "relationshipName": "cloture",
+            "otherEntityName": "cloture",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "titre"
+        },
+        {
+            "relationshipName": "fractionnement",
+            "otherEntityName": "fractionnement",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "titre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "symbole",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160512111708",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "titre",
+    "pagination": "pagination"
+}

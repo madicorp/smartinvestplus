@@ -1,0 +1,38 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "bourse",
+            "otherEntityName": "bourse",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "symbole"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "top",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "composite",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160512112107",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "indice",
+    "pagination": "pagination"
+}

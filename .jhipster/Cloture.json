@@ -1,0 +1,43 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "titre",
+            "otherEntityName": "titre",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "symbole"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "volume",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valeur",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "transactions",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cours",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160512112401",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "cloture",
+    "pagination": "pagination"
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512110955_added_entity_Bourse.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512111708_added_entity_Titre.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112107_added_entity_Indice.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112401_added_entity_Cloture.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112543_added_entity_Fractionnement.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160512110955_added_entity_constraints_Bourse.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512111708_added_entity_constraints_Titre.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112107_added_entity_constraints_Indice.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112401_added_entity_constraints_Cloture.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112543_added_entity_constraints_Fractionnement.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_bourses.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_titres.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_1.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_2.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_3.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_4.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_5.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_6.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_7.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112545_load_data_clotures_8.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112546_load_strored_procedures.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160512112547_load_triggers.xml" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

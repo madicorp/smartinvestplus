@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClotureLabel" translate="smartinvestplusApp.cloture.home.createOrEditLabel">Create or edit a Cloture</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cloture.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cloture.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smartinvestplusApp.cloture.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cloture.date" is-open="vm.datePickerOpenStatus.date"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.date.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.date.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smartinvestplusApp.cloture.volume" for="field_volume">Volume</label>
+            <input type="number" class="form-control" name="volume" id="field_volume"
+                    ng-model="vm.cloture.volume"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smartinvestplusApp.cloture.valeur" for="field_valeur">Valeur</label>
+            <input type="number" class="form-control" name="valeur" id="field_valeur"
+                    ng-model="vm.cloture.valeur"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smartinvestplusApp.cloture.transactions" for="field_transactions">Transactions</label>
+            <input type="number" class="form-control" name="transactions" id="field_transactions"
+                    ng-model="vm.cloture.transactions"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smartinvestplusApp.cloture.cours" for="field_cours">Cours</label>
+            <input type="number" class="form-control" name="cours" id="field_cours"
+                    ng-model="vm.cloture.cours"
+                    required />
+            <div ng-show="editForm.cours.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cours.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cours.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="smartinvestplusApp.cloture.titre" for="field_titre">Titre</label>
+            <select class="form-control" id="field_titre" name="titre" ng-model="vm.cloture.titre" ng-options="titre as titre.symbole for titre in vm.titres track by titre.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
